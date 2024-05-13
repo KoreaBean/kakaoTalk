@@ -1,0 +1,287 @@
+signIn (로그인)
+
+url - post
+/api/v1/auth/sign-in
+
+-request
+    {
+    *email : String
+    *password : String
+    }
+
+-response
+    성공
+    http status - 200 (Ok)
+    {
+    code : "SU"
+    message : "Success"
+    token : "jwt..."
+    expiredDate : 123456789
+    }
+
+    실패
+    http status - 401 (Unauthorized) 인증 실패
+    {
+        code : "SF"
+        message : "Sign In Failed"
+    }
+
+    -데이터베이스 에러
+    http status - 500 (Internal Server Error)
+    {
+        code : "DE"
+        message : "Database Error"
+    }
+
+
+===================================================
+
+SignUp (회원가입)
+
+url
+post
+/api/v1/auth/sign-up
+
+-request
+    {
+      *email : String,
+      *password : String,
+      *nickname : String,
+      *telNumber : String,
+      *address : String,
+      addressDetail : String
+      *agreedPersonal : boolean
+    }
+
+-response
+
+성공
+
+Http Status - 200 (성공)
+    {
+      code : "SU",
+      message : "Success"
+    }
+
+실패
+
+-이메일 중복
+Http Status - 400 (Bad Request)
+    {
+      code : "EE",
+      message : "Existed Email"
+    }
+
+-데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+    {
+      code : "DE
+      message : "Database Error."
+    }
+
+-이메일 포맷 불일치 / 비밀번호 8자리 미만 / 전화번호 포맷 불일치 / 필수정보 미입력
+
+===================================================
+updateFriends (업데이트 친구 프로필)
+
+url - Get
+/api/v1/home/update-list
+
+request
+
+response
+
+성공
+http status - 200 (OK)
+
+{
+    code : "SU"
+    message : "Success"
+    updateFriendsList : updateFriendsListItem[]
+
+}
+
+
+실패
+-데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+  code : "DE
+  message : "Database Error."
+}
+
+
+
+
+===================================================
+
+friends(친구 목록)
+
+url - Get
+
+/api/v1/home/friends
+
+request
+
+
+response
+
+성공
+http status - 200 (ok)
+{
+    code : "SU"
+    message : "Success"
+    friendsList : friendsListItem[]
+}
+
+friendsListItem[]
+    {
+    nickname : String
+    title : String
+    profileImage : String
+    }
+
+실패
+-데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+  code : "DE
+  message : "Database Error."
+}
+
+===================================================
+
+bookmark (즐겨찾기 리스트)
+
+url - Get
+
+/api/v1/home/bookmark-list
+
+request
+
+response
+http status - 200 OK
+
+{
+    code : "SU"
+    message : "Success"
+    bookmarkList : bookmarkListItem[]
+}
+
+bookmarkListItem
+    {
+        profileImage : String
+        nickname : String
+        title : String
+    }
+
+실패
+-데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+  code : "DE
+  message : "Database Error."
+}
+
+
+===================================================
+
+Profile (내 프로필)
+
+url - Get
+
+/api/v1/home/profile
+
+request
+
+response
+http status - 200 OK
+
+{
+    code : "SU"
+    message : "Success"
+    profileImage : String
+    nickname : String
+    title : String
+}
+
+실패
+-데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+  code : "DE
+  message : "Database Error."
+}
+
+===================================================
+
+chatList (채팅방 목록)
+
+url - Get
+
+/api/v1/chat
+
+request
+
+response
+http status - 200 OK
+
+{
+    code : "SU"
+    message : "Success"
+    chatList : chatListItem[]
+}
+
+chatListItem
+{
+    profileImage : String
+    nickname : String
+    message : String
+    sendDate : String
+    memberCount : int
+    notReadMessage : int
+}
+
+
+
+실패
+-데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+  code : "DE
+  message : "Database Error."
+}
+
+-존재하지 않는 유저 (상대방한테 차단 당했을 경우)
+Http Status - 400 (Bad Request)
+{
+  code : "NU"
+  message : "No Existed User"
+}
+
+
+===================================================
+
+chatRoom  - (채팅방)
+
+url - Get , post
+
+/api/v1/chat/
+request - post
+
+{
+    message : String
+    sendDate : String
+}
+
+response - Get
+
+{
+    m
+}
+
+
+
+
+
+

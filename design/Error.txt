@@ -1,0 +1,35 @@
+-데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+  code : "DE
+  message : "Database Error."
+}
+-존재하지 않는 유저
+Http Status - 400 (Bad Request)
+{
+  code : "NU"
+  message : "No Existed User"
+}
+
+-존재하지 않는 채팅방
+Http Status - 400 (Bad Request)
+{
+  code : "NC"
+  message : "No Existed Chat"
+}
+
+-이메일 중복
+Http Status - 400 (Bad Request)
+{
+  code : "EE",
+  message : "Existed Email"
+}
+
+실패
+http status - 401 (Unauthorized) 인증 실패
+{
+    code : "SF"
+    message : "Sign In Failed"
+}
+
+

@@ -1,0 +1,39 @@
+
+
+Table 목록
+
+
+user
+
+{
+    *email : String
+    *password : String
+    *nickname : String
+    *id string
+    *telNumber : String
+    *address : String
+    addressDetail : String
+    profileImage : string
+    titleMessage : string
+    createDate : String
+    modifyDate : String
+}
+
+friends {
+
+    myId : string
+    friendId :  string
+    createDate : string
+
+}
+
+
+updateProfile {
+
+
+}
+
+
+
+
+

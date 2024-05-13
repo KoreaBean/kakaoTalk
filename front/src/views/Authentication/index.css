@@ -1,0 +1,100 @@
+
+.login-container {
+
+
+    width: 600px;
+    height: 700px;
+    background-color: #ffd02d;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form {
+    width: 350px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.id-inputbox {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.password-inputbox {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.kakaoTalk-icon-box{
+    width: 200px;
+    height: 150px;
+}
+.error-description {
+    padding: 10px;
+}
+.login-submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+.password-inputbox-container {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.id-inputbox-container {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.password-inputbox {
+    border: none;
+    outline: none;
+    background: none;
+
+}
+.id-inputbox {
+    border: none;
+    outline: none;
+    background: none;
+
+}
+
+.login-description {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.icon-box {
+    width: 35px;
+    height: 35px;
+}
+
+.error-description {
+    color: rgba(255,0,0,0.8);
+}
+

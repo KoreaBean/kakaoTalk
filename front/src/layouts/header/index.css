@@ -1,0 +1,22 @@
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 600px;
+    height: 30px;
+    background-color: #ffd02d;
+    gap: 10px;
+}
+
+.icon-box{
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
