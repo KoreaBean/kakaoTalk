@@ -1,0 +1,35 @@
+.header1 {
+    background-color: pink;
+    display: grid;
+    grid-area: header;
+
+}
+
+
+.main1{
+    background-color: white;
+    grid-area: main;
+}
+.aside1 {
+    background-color: red;
+    grid-area: aside;
+}
+.footer1{
+    background-color: black;
+    grid-area: footer;
+}
+.test1-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: 3fr 1fr ;
+    grid-template-rows: 100px auto 50px;
+    grid-template-areas:
+    'header header'
+    'main aside'
+    'footer footer';
+}
+
+
+

@@ -1,0 +1,65 @@
+
+
+.profileBox-container {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 50px;
+}
+.profileBox-container:hover {
+    background-color: #BEBEBE;
+}
+
+.image-box{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+}
+
+.profileImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 30% 30%;
+    background-position: center;
+}
+
+.user-box {
+    display: flex;
+    gap: 10px;
+}
+
+.nickname-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleMessage {
+    font-size: 15px;
+    color: gray;
+
+}
+
+.nickname {
+    font-size: 20px;
+    justify-content: center;
+    align-content: center;
+}
+.multiProfile-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: gray;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: gray;
+    cursor: pointer;
+
+}
+
+.multiProfile {
+    text-align: center;
+    font-size: 20px;
+}

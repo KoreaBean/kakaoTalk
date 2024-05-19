@@ -1,0 +1,33 @@
+
+.title-container {
+    width: 500px;
+    height: 80px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+.title-box {
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+
+}
+
+.titleIcon-box {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+
+.searchIcon-box{
+    width: 30px;
+    height: 30px;
+}
+.userplusIcon-box{
+    width: 30px;
+    height: 30px;
+}

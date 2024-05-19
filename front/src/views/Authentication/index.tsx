@@ -1,11 +1,21 @@
 import './index.css';
-import {useRef, useState, KeyboardEvent} from "react";
-import {Simulate} from "react-dom/test-utils";
-import timeUpdate = Simulate.timeUpdate;
+import {useRef, useState, KeyboardEvent, ChangeEventHandler, ChangeEvent} from "react";
+import {useNavigate} from "react-router-dom";
+import {SignInRequestDto} from "../../apis/request/auth";
+import {signInRequest} from "../../apis";
+import {SignInResponseDto} from "../../apis/response/auth";
+import {ResponseDto} from "../../apis/response";
+import {MAIN_PATH} from "../../contant";
+import {useCookies} from "react-cookie";
 
 
 //                  function : 로그인 화면
 export default function Authentication() {
+
+    const navigator = useNavigate();
+
+    //                  state : 쿠키 상태
+    const [cookies, setCookies] = useCookies();
 
     //                  state : 이메일 상태
     const [email,setEmail] = useState<string>('')
@@ -46,7 +56,30 @@ export default function Authentication() {
     
     //                  event handler : 로그인 submit 핸들러
     const submitOnClickHandler = () => {
-        alert('로그인')
+
+        const requestBody :SignInRequestDto = {email,password}
+        signInRequest(requestBody) .then(signAuthentication)
+
+
+
+    }
+
+    const signAuthentication = (responseBody : ResponseDto | SignInResponseDto |null) => {
+
+        if (!responseBody) return null;
+
+        if (responseBody.code !== "SU") {
+            alert(responseBody.code)
+            setError(true)
+            return ;
+        }
+        alert('인증 성공')
+        setError(false)
+        const {token, expirationTime} = responseBody as SignInResponseDto;
+        const now = new Date().getTime();
+        const expires = new Date(now + expirationTime * 1000);
+        setCookies('accessToken', token,{expires, path:MAIN_PATH()})
+        navigator(MAIN_PATH())
     }
 
     //                  event handler : 패스워드 아이콘 변경 핸들러
@@ -60,6 +93,19 @@ export default function Authentication() {
         }
     }
 
+    //                  event hanlder : 이메일 변경 핸들러
+    const emailChangeHandler = (event : ChangeEvent<HTMLInputElement>) => {
+        const {value} = event.target
+        setEmail(value)
+    }
+
+    //                  event handler : 패스워드 변경 핸들러
+    const passwordChangeHandler = (event : ChangeEvent<HTMLInputElement>) => {
+        const {value} = event.target
+        setPassword(value)
+    }
+
+
 
 
     return(
@@ -69,10 +115,10 @@ export default function Authentication() {
             </div>
             <div className='login-form'>
                 <div className='form id-inputbox-container'>
-                    <input className='id-inputbox' ref={emailRef} onKeyDown={emailRefHandler} type='text'/>
+                    <input className='id-inputbox' ref={emailRef} onKeyDown={emailRefHandler} type='text' value={email} onChange={emailChangeHandler} />
                 </div>
                 <div className='form password-inputbox-container'>
-                    <input className='password-inputbox' ref={passwordRef} onKeyDown={passwordRefHandler} type={passwordType}/>
+                    <input className='password-inputbox' ref={passwordRef} onKeyDown={passwordRefHandler} type={passwordType} value={password} onChange={passwordChangeHandler}/>
                     <div className='icon-box' onClick={passwordIconButtonClickHandler}>
                         <div className={`icon ${passwordIcon}`}></div>
                     </div>
@@ -82,8 +128,8 @@ export default function Authentication() {
                 <div className='login-submit'  onClick={submitOnClickHandler}>{'로그인'}</div>
             </div>
             <div className='login-description'>
-                <div className='lose-Email'>{'이메일 찾기'}</div>
-                <div className='lose-password'>{'비밀번호 찾기'}</div>
+                <div className='lost-Email'>{'이메일 찾기'}</div>
+                <div className='lost-password'>{'비밀번호 찾기'}</div>
                 <div className='sign-up'>{'회원가입'}</div>
             </div>
         </div>

@@ -1,0 +1,18 @@
+
+.main-container{
+    width: 500px;
+    height: 500px;
+}
+
+.updateMock-container {
+    display: flex;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+
+}
+.friendsProfileMock-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

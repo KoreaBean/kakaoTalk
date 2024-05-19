@@ -1,0 +1,74 @@
+
+.leftSide-container {
+    float: left;
+    width: 70px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #d6d6d6;
+
+
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px;
+    justify-items: center;
+    align-items: center;
+}
+.bottom-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px;
+
+}
+
+.personIcon-box {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+
+}
+
+
+.chatIcon-box{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.dots-box{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.emotion-box{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.bell-box{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.option-box{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.message-box {
+    background-color: red;
+    border-radius: 50px 50px;
+    position: fixed;
+    left: 140px;
+    top: 220px;
+}
+
