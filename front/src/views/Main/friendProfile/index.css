@@ -35,7 +35,7 @@
 .profile-container {
     display: flex;
     justify-content: space-between;
-    width: 600px;
+    width: 500px;
     height: 50px;
 }
 
@@ -46,4 +46,8 @@
 .friend-number-box{
     display: flex;
     gap: 10px;
+}
+
+.chatting-titleImage{
+    border-radius: 50% 50%;
 }

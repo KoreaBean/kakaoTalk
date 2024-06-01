@@ -67,8 +67,11 @@
 .message-box {
     background-color: red;
     border-radius: 50px 50px;
-    position: fixed;
+    position: absolute;
     left: 140px;
     top: 220px;
 }
 
+.chatting-ul{
+    list-style: none;
+}

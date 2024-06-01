@@ -8,7 +8,7 @@ export default function LeftSide(){
 
 
     //                  state : personIcon 상태
-    const [personIcon, setPersonIcon] = useState<boolean>(false);    //'white-person-fill' | 'person-fill'>
+    const [personIcon, setPersonIcon] = useState<boolean>(true);    //'white-person-fill' | 'person-fill'>
 
     //                  state : chatIcon 상태
     const [chatIcon, setChatIcon] = useState<boolean>(false);  //'chat' | 'chat-fill'

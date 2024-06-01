@@ -11,7 +11,7 @@ const updateUserList : updateUserListItem[] = [
         "profileImage" : null
     },
     {
-      "nickname"  : '박종우',
+      "nickname"  : '김종우',
       "profileImage" : null
     }
 ]

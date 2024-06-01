@@ -17,20 +17,20 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 public class UserEntity {
 
     @Id
     private String email;
     private String password;
     private String nickname;
-    private String id;
-    private String telnumber;
+    private String telNumber;
     private String address;
-    private String createdate;
-    private String modifydate;
-    private String birthdate;
-    private String detailaddress;
-    private String profileimage;
-    private String titlemessage;
+    private String addressDetail;
+    private String createDate;
+    private String modifyDate;
+    private String birthDay;
+    private String profileImage;
+    private String titleMessage;
 
 }

@@ -1,0 +1,50 @@
+
+.chatting-container {
+    width: 600px;
+    height: 450px;
+    background-color: #c7d4ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.chatting-footer-inputBox {
+    width: 600px;
+    height: 50px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.chatting-footer-input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+
+.chatting-footer-input:focus{
+    outline: none;
+}
+
+
+.chatting-footer-container{
+    width: 600px;
+    height: 100px;
+    background-color: #c6c6c6;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.chatting-message-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.my-message{
+    background-color: yellow;
+}
+
+.friend-message {
+
+}

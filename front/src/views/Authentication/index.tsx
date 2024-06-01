@@ -7,7 +7,7 @@ import {SignInResponseDto} from "../../apis/response/auth";
 import {ResponseDto} from "../../apis/response";
 import {MAIN_PATH} from "../../contant";
 import {useCookies} from "react-cookie";
-
+import useLoginUserStore from "../../stores/login-user.stores";
 
 //                  function : 로그인 화면
 export default function Authentication() {
@@ -16,6 +16,7 @@ export default function Authentication() {
 
     //                  state : 쿠키 상태
     const [cookies, setCookies] = useCookies();
+
 
     //                  state : 이메일 상태
     const [email,setEmail] = useState<string>('')
@@ -74,11 +75,12 @@ export default function Authentication() {
             return ;
         }
         alert('인증 성공')
+        sessionStorage.setItem('email',email);
         setError(false)
         const {token, expirationTime} = responseBody as SignInResponseDto;
         const now = new Date().getTime();
         const expires = new Date(now + expirationTime * 1000);
-        setCookies('accessToken', token,{expires, path:MAIN_PATH()})
+        setCookies('accessToken', token,{expires, path:MAIN_PATH(), httpOnly : true})
         navigator(MAIN_PATH())
     }
 

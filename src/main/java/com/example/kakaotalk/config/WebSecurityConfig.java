@@ -35,7 +35,7 @@ public class WebSecurityConfig {
                 .httpBasic(HttpBasicConfigurer::disable)
                 .sessionManagement(SessionManagementConfigurer -> SessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         httpSecurity.authorizeHttpRequests(request -> request
-                .requestMatchers("/","/api/v1/**").permitAll()
+                .requestMatchers("/","/api/v1/**","/**").permitAll()
                 .anyRequest().authenticated());
 
 

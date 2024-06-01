@@ -1,0 +1,76 @@
+
+.addFriend-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.addFriend-header{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.addFriend-header-search-box {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.addFriend-body{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.addFriend-body-input-box {
+    width: 400px;
+    height: 50px;
+}
+.addFriend-input{
+    width: 100%;
+    height: 100%;
+}
+
+
+.addFriend-friendList{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.friendList-box{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.friendList-user-box{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.emailSearch-gray{
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    background-color: gray;
+
+}
+.emailSearch-white{
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    background-color: white;
+
+}
+
+.phoneSearch-white{
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    background-color: white;
+
+}
+.phoneSearch-gray{
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    background-color: gray;
+
+}

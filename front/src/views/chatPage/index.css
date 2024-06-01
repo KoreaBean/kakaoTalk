@@ -1,0 +1,14 @@
+
+
+.ChatPage-container {
+    width: 500px;
+    height: 500px;
+    overflow-y: scroll;
+    background-color: gray;
+}
+
+.ChatPage-body{
+    width: 500px;
+    height: 300px;
+    overflow-y: scroll;
+}

@@ -1,18 +1,17 @@
 import './index.css';
 import profileDefaultImage from 'assets/images/profileDefaultImage.png';
-import friendsProfileListItem from "../../../types/interface/myfriendsProfileList.interface";
-
+import MyFriendListItem from "../../../types/interface/myFriendListItem";
 interface Props {
+    myFriendListItem : MyFriendListItem
 
-    friendList : friendsProfileListItem
 
 }
 
 
 
-export default function MyFriendProfile({friendList} : Props){
+export default function MyFriendProfile({myFriendListItem} : Props){
 
-    const {nickname, titleMessage, profileImage} = friendList
+    const {email, profileImage, titleMessage, nickname} = myFriendListItem
 
 
 

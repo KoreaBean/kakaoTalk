@@ -5,8 +5,32 @@
     justify-content: right;
     width: 600px;
     height: 30px;
-    background-color: #ffd02d;
+    background-color: #A5FAFF;
     gap: 10px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.header-container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 600px;
+    height: 30px;
+    background-color: #d6d6d6;
+    gap: 10px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+.header-container3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 600px;
+    height: 30px;
+    background-color: #c7d4ff;
+    gap: 10px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .icon-box{
