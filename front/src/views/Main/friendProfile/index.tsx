@@ -13,6 +13,8 @@ export default function MyFriendProfile({myFriendListItem} : Props){
 
     const {email, profileImage, titleMessage, nickname} = myFriendListItem
 
+    sessionStorage.getItem(nickname);
+
 
 
     return(

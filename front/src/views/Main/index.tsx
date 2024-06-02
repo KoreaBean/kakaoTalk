@@ -25,6 +25,7 @@ export default function Main() {
     const [updateFriendList,setUpdateFriendList] = useState<updateUserListItem[]>([])
 
     const email = sessionStorage.getItem('email')
+    const myNickname = sessionStorage.getItem('nickname')
 
     const getMyFriendListResponse = (responseBody : ResponseDto | MyFriendListResponseDto | null) => {
 
@@ -57,11 +58,14 @@ export default function Main() {
         alert(code)
     }
 
-    const onDoubleCreateChatRoom = (friendEmail : string) => {
+    const onDoubleCreateChatRoom = (list :MyFriendListItem) => {
         if (email == null) return
+        if (myNickname == null) return;
         const requestBody : CreateChattingRoomRequestDto = {
             email1 : email,
-            email2 : friendEmail
+            nickname1 : myNickname,
+            email2 : list.email,
+            nickname2 : list.nickname
         }
         CreateChattingRoom(requestBody).then(CreateChattingRoomResponse)
     }
@@ -79,7 +83,7 @@ export default function Main() {
             <FriendHeader number={friendList?.length ?? 0} icon={"expand-down-light"}/>
             <div className='friendsProfileMock-container'>
                 {friendList && friendList.map((list, index) =>
-                    <div onDoubleClick={() =>onDoubleCreateChatRoom(list.email)}>
+                    <div onDoubleClick={() =>onDoubleCreateChatRoom(list)}>
                     <MyFriendProfile key={index} myFriendListItem={list}/>
                     </div>
                 )}

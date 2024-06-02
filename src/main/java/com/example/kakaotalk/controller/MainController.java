@@ -5,10 +5,8 @@ import com.example.kakaotalk.dto.request.main.AddFriendRequestDto;
 import com.example.kakaotalk.dto.request.main.CreateChattingRoomRequestDto;
 import com.example.kakaotalk.dto.request.main.MyProfileRequestDto;
 import com.example.kakaotalk.dto.response.ResponseDto;
-import com.example.kakaotalk.dto.response.main.FriendListResponseDto;
-import com.example.kakaotalk.dto.response.main.MyFriendProfileListResponseDto;
-import com.example.kakaotalk.dto.response.main.MyProfileResponseDto;
-import com.example.kakaotalk.dto.response.main.SearchFriendResponseDto;
+import com.example.kakaotalk.dto.response.main.*;
+import com.example.kakaotalk.service.ChatService;
 import com.example.kakaotalk.service.MainService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +21,7 @@ public class MainController {
 
 
     private final MainService mainService;
+    private final ChatService chatService;
 
     @PostMapping("/my-profile")
     public ResponseEntity<? super MyProfileResponseDto> myProfile(@RequestBody MyProfileRequestDto dto){
@@ -57,7 +56,7 @@ public class MainController {
     }
 
     @PostMapping("/create-chatting-room")
-    public ResponseEntity<ResponseDto> createChattingRoom (@RequestBody CreateChattingRoomRequestDto dto) {
+    public ResponseEntity<? super SearchConnectRoomDto> createChattingRoom (@RequestBody CreateChattingRoomRequestDto dto) {
 
         // 1. 기존 채팅방 검색해서 없는 유저들이면
         // 2. 새로운 채팅방 만들기
@@ -66,7 +65,9 @@ public class MainController {
 
         // 1. 검증하는 메서드 1 개
         // 2. 검증 결과에 따라 방 만드는 메서드 1개 -> 반환 타입은 roomID
+        ResponseEntity<? super SearchConnectRoomDto> result = chatService.searchRoom(dto);
 
+        return result;
 
 
 

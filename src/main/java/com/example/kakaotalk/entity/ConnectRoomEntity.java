@@ -6,22 +6,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "chatroom")
+@Entity(name = "connectRoom")
+@Table(name = "connectRoom")
 @Getter
 @Setter
-@Table(name = "chatroom")
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChatRoomEntity {
+public class ConnectRoomEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long connectId;
     private long roomId;
-    private String roomName;
-    private String lastSend;
-    private boolean isGroup;
-
-
-
-
+    private String email;
 }
